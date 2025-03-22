@@ -4,6 +4,9 @@ import { Head } from '@inertiajs/react';
 
 export default function Welcome({ questions }: { questions: Question[] }) {
     const { location, error, loading } = useLocation();
+
+    console.log({ questions, location, error, loading });
+
     return (
         <>
             <Head title="Mejor Riojanas">
