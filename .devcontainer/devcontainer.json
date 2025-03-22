@@ -1,0 +1,36 @@
+// https://aka.ms/devcontainer.json
+{
+    "name": "desafio-hidrico",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "laravel.test",
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mikestead.dotenv",
+                "amiralizadeh9480.laravel-extra-intellisense",
+                "open-southeners.laravel-pint",
+                "esbenp.prettier-vscode",
+                "inferrinizzard.prettier-sql-vscode",
+                "laravel.vscode-laravel",
+                "bmewburn.vscode-intelephense-client",
+                "bradlc.vscode-tailwindcss",
+                "usernamehw.errorlens",
+                "eamodio.gitlens",
+                "dbaeumer.vscode-eslint",
+                "sanderronde.phpstan-vscode"
+            ],
+            "settings": {
+                "php.validate.executablePath": "/usr/bin/php"
+            }
+        }
+    },
+    "remoteUser": "sail",
+    "postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true",
+    "postStartCommand": "nohup bash -c 'npm run dev &'"
+    // "postStartCommand": "nohup bash -c 'npm run dev &' && nohup bash -c 'php artisan schedule:work &'"
+
+    // "forwardPorts": [],
+    // "runServices": [],
+    // "shutdownAction": "none",
+}
