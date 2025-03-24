@@ -3,9 +3,7 @@ import { AppLayout } from '@/layouts/app-layout';
 import { Link } from '@inertiajs/react';
 
 export default function Welcome() {
-    const { location, error, loading } = useLocation();
-
-    console.log({ location, error, loading });
+    useLocation();
 
     return (
         <AppLayout>
