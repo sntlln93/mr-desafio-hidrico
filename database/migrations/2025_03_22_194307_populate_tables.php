@@ -40,7 +40,7 @@ return new class extends Migration
                 ],
             ],
             [
-                'content' => 'Con qué limpiás la vereda?',
+                'content' => '¿Con qué limpiás la vereda?',
                 'answers' => [
                     ['content' => 'Con manguera', 'liters' => 50],
                     ['content' => 'Con balde', 'liters' => 10],
@@ -68,7 +68,7 @@ return new class extends Migration
                 ],
             ],
             [
-                'content' => '¿Como consumís agua diariamente?',
+                'content' => '¿Cómo consumís agua diariamente?',
                 'answers' => [
                     ['content' => 'Bebo la cantidad necesaria y sino la guardo', 'liters' => 0],
                     ['content' => 'A veces dejo restos sin tomar en el vaso y la tiro', 'liters' => 10],
