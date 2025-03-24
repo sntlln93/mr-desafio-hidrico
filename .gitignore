@@ -23,3 +23,4 @@ yarn-error.log
 /.vscode
 /.zed
 nohup.out
+.DS_STORE
