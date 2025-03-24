@@ -10,7 +10,7 @@ class GameController extends Controller
 {
     public function store(Request $request, LocationService $location)
     {
-        $ip_info = $location->get($request->ip());
+        $ip_info = $location->get($request->getClientIp());
 
         $game = Game::create([
             'ip_address' => $request->ip(),
