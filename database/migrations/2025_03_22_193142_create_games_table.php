@@ -17,6 +17,14 @@ return new class extends Migration
             $table->text('user_agent')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
+            $table->string('country')->nullable();
+            $table->string('regionName')->nullable();
+            $table->string('city')->nullable();
+            $table->string('district')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('isp')->nullable();
+            $table->string('ip_latitude')->nullable();
+            $table->string('ip_longitude')->nullable();
             $table->timestamps();
         });
     }
