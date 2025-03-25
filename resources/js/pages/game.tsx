@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 
 export default function Game({ questions }: { questions: Question[] }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [score, setScore] = useState(0);
+    const [consumption, setConsumption] = useState(0);
     const [answers, setAnswers] = useState<number[]>([]);
 
     const { location } = useLocation();
@@ -17,13 +17,11 @@ export default function Game({ questions }: { questions: Question[] }) {
     const currentQuestion = questions[currentQuestionIndex];
 
     function handleAnswer(answer_id: number, liters: number) {
-        setScore((prev) => prev + liters);
+        setConsumption((prev) => prev + liters);
         setAnswers((prev) => [...prev, answer_id]);
         setTimeout(() => {
             if (currentQuestionIndex < questions.length - 1) {
                 setCurrentQuestionIndex((prev) => prev + 1);
-            } else {
-                alert(`¡Juego terminado! Agua utilizada: ${score + liters} litros`);
             }
         }, 300);
     }
@@ -52,8 +50,8 @@ export default function Game({ questions }: { questions: Question[] }) {
                         <button
                             key={answer.liters}
                             className={cn(
-                                'w-full rounded-md border-2 border-gray-400 bg-white px-6 py-3 text-lg font-semibold hover:bg-gray-100',
-                                answers.includes(answer.id) && 'bg-blue-500 text-white',
+                                'w-full rounded-md border-2 border-gray-400 bg-white px-6 py-3 text-lg font-semibold hover:border-blue-600 hover:bg-blue-500 hover:text-white',
+                                answers.includes(answer.id) && 'border-blue-600 bg-blue-500 text-white',
                             )}
                             onClick={() => handleAnswer(answer.id, answer.liters)}
                             disabled={answers.includes(answer.id)}
@@ -66,7 +64,7 @@ export default function Game({ questions }: { questions: Question[] }) {
 
             {/* Water Score Display */}
             <footer className="absolute right-5 bottom-10">
-                <Water score={score} />
+                <Water consumption={consumption} />
             </footer>
         </AppLayout>
     );
