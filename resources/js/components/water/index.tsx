@@ -1,4 +1,4 @@
-export function Water({ score }: { score: number }) {
+export function Water({ consumption }: { consumption: number }) {
     return (
         <div
             style={{
@@ -11,7 +11,7 @@ export function Water({ score }: { score: number }) {
                 className="absolute bottom-0 left-0 w-full bg-blue-400 transition-all duration-500"
                 style={{
                     clipPath: 'polygon(0 0, 100% 0, 90% 100%, 10% 100%)',
-                    height: `${(score * 100) / 615}%`,
+                    height: `${(consumption * 100) / 615}%`,
                 }}
             />
         </div>
