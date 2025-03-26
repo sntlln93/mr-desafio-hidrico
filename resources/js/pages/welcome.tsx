@@ -17,7 +17,7 @@ export default function Welcome() {
             <footer className="mt-10">
                 <Link
                     href={route('game.play')}
-                    className="relative mx-auto rounded-[2rem] bg-[#2E4DA0] px-8 py-6 text-3xl font-bold text-white shadow-lg hover:cursor-pointer hover:bg-[#07153F]"
+                    className="relative mx-auto rounded-[2rem] bg-[#2E4DA0] px-8 py-6 text-3xl font-bold text-white shadow-lg"
                 >
                     COMENZAR
                 </Link>

@@ -50,7 +50,7 @@ export default function Game({ questions }: { questions: Question[] }) {
                         <button
                             key={answer.liters}
                             className={cn(
-                                'w-full rounded-md border-2 border-gray-400 bg-white px-6 py-3 text-lg font-semibold hover:border-blue-600 hover:bg-blue-500 hover:text-white',
+                                'w-full rounded-md border-2 border-gray-400 bg-white px-6 py-3 text-lg font-semibold',
                                 answers.includes(answer.id) && 'border-blue-600 bg-blue-500 text-white',
                             )}
                             onClick={() => handleAnswer(answer.id, answer.liters)}
