@@ -11,7 +11,7 @@ Route::post('/game', [GameController::class, 'store'])->name('game.store');
 
 Route::get('bkp/', function() {
     $games = App\Models\Game::with('answers.question')->get();
-    $questions = App\Models\Question::all();
+    $questions = App\Models\Question::with('answers')->get();
 
     return response()->json([
         'games' => $games,
